@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react';
 import Hero from './Hero';
-import useEvents from './hooks/useEvents';
 import useResults from './hooks/useResults';
 import Progress from './Progress';
+import Schedule from './Schedule';
 import Tables from './Tables';
 import TextContainer from './TextContainer';
-import Upcoming from './Upcoming';
+import { Events } from './Events';
 
 function App() {
   const windowSize = window.matchMedia('(min-width: 800px)');
   const [isDesktop, setIsDesktop] = useState(windowSize.matches);
-  const { events } = useEvents();
   const { scoreTally, results } = useResults();
 
   useEffect(() => {
@@ -20,19 +19,19 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { kings, ucl } = scoreTally;
+  const { kings, gkt } = scoreTally;
 
-  const target = process.env.REACT_APP_TARGET || Math.floor(events.length / 2);
+  const target = process.env.REACT_APP_TARGET || Math.floor(Events.length / 2);
 
   return (
     <div data-theme="kclsu">
       <Hero />
       <TextContainer>
         <h2 className="text-center"> Results and Upcoming Matches</h2>
-        <Progress kingsScore={+kings} uclScore={+ucl} target={+target} />
+        <Progress kingsScore={+kings} gktScore={+gkt} target={+target} />
         <div className="flex w-full mt-16">
-          {isDesktop && <Upcoming isDesktop={isDesktop} events={events} />}
-          <Tables isDesktop={isDesktop} events={events} results={results} />
+          {isDesktop && <Schedule isDesktop={isDesktop} />}
+          <Tables isDesktop={isDesktop} results={results} />
         </div>
       </TextContainer>
     </div>

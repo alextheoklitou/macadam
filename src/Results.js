@@ -12,20 +12,20 @@ const Results = ({ results }) => {
 
   if (results && results.length > 0) {
     rows = results.map((match) => {
-      const kingsWin = +match.Kings > +match.Ucl;
-      const uclWin = +match.Kings < +match.Ucl;
+      const kingsWin = +match.Kings > +match.Gkt;
+      const gktWin = +match.Kings < +match.Gkt;
       return (
         <tr className="mb-10" key={match.Id}>
           <td
-            className={`${uclWin && '!bg-purple text-white'} ${
+            className={`${gktWin && '!bg-purple text-white'} ${
               kingsWin && '!bg-kings text-white'
             } !rounded-none text-center`}
           >
-            {kingsWin || uclWin ? '🏆' : ''}
+            {kingsWin || gktWin ? '🏆' : ''}
           </td>
           <td> {match.Title} </td>
           <td className="text-center">{match.Kings}</td>
-          <td className="text-center">{match.Ucl}</td>
+          <td className="text-center">{match.Gkt}</td>
         </tr>
       );
     });
@@ -40,7 +40,7 @@ const Results = ({ results }) => {
             <th>Match</th>
             <th className="text-center">Kings</th>
             <th>
-              UCL
+              GKT
               <span className="opacity-0 invisible text-center">S</span>
             </th>
           </tr>
@@ -59,7 +59,7 @@ Results.propTypes = {
       Url: PropTypes.string,
       StartDate: PropTypes.string,
       Id: PropTypes.string,
-      Ucl: PropTypes.string,
+      Gkt: PropTypes.string,
       Kings: PropTypes.string,
     })
   ),
