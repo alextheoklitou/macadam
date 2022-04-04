@@ -1,4 +1,4 @@
-# KCLSU Varsity App
+# KCLSU Macadam App
 
 This is a page created for the kclsu website, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

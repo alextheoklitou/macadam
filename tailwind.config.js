@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     colors: {
-      white: 'white',
+      white: '#FFFFFF',
       blue: '#1fb6ff',
       purple: '#502669',
       pink: '#EE7D79',
@@ -29,6 +29,7 @@ module.exports = {
     themes: [
       {
         kclsu: {
+          white: '#FFFFFF',
           primary: '#e1251c',
           navy: '#0C2F46',
           secondary: '#502669',
