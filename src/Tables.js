@@ -21,8 +21,8 @@ const Tables = ({ isDesktop, results }) => {
               <kclsu-countdown
                 width="280px"
                 margin="0.5em auto"
-                text="17-21 March 2022"
-                date="March 17, 2022, 22:00:00"
+                text="6 April 2022"
+                date="April 06, 2022, 11:00:00"
               />
             )}
             <Results results={results} />
