@@ -12,12 +12,12 @@ const Results = ({ results }) => {
 
   if (results && results.length > 0) {
     rows = results.map((match) => {
-      const kingsWin = +match.Kings > +match.Gkt;
-      const gktWin = +match.Kings < +match.Gkt;
+      const kingsWin = +match.Kings > +match.GKT;
+      const gktWin = +match.Kings < +match.GKT;
       return (
         <tr className="mb-10" key={match.Id}>
           <td
-            className={`${gktWin && '!bg-purple text-white'} ${
+            className={`${gktWin && '!bg-gkt text-white'} ${
               kingsWin && '!bg-kings text-white'
             } !rounded-none text-center`}
           >
@@ -25,7 +25,7 @@ const Results = ({ results }) => {
           </td>
           <td> {match.Title} </td>
           <td className="text-center">{match.Kings}</td>
-          <td className="text-center">{match.Gkt}</td>
+          <td className="text-center">{match.GKT}</td>
         </tr>
       );
     });
@@ -36,10 +36,10 @@ const Results = ({ results }) => {
       <table className="table table-compact table-zebra  w-full">
         <thead>
           <tr>
-            <th>-</th>
+            <th></th>
             <th>Match</th>
             <th className="text-center">Kings</th>
-            <th>
+            <th className="text-center">
               GKT
               <span className="opacity-0 invisible text-center">S</span>
             </th>

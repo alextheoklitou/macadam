@@ -54,7 +54,7 @@ const Progress = ({ kingsScore, gktScore, target }) => {
             style={{ marginBottom: 0 }}
           />
           <div className="self-center text-3xl">
-            <Trophy colour="#f49e25" />
+            <Trophy colour="#f8bc14" />
           </div>
         </div>
       </ScrollIntoView>

@@ -17,8 +17,8 @@ const useResults = () => {
       kings: 0,
     };
     matches.forEach((result) => {
-      if (+result.Kings > +result.Gkt) scores.kings += 1;
-      else if (+result.Kings < +result.Gkt) scores.gkt += 1;
+      if (+result.Kings > +result.GKT) scores.kings += 1;
+      else if (+result.Kings < +result.GKT) scores.gkt += 1;
     });
     setScoreTally(scores);
   }
@@ -45,8 +45,9 @@ const useResults = () => {
       })
       .then((resp) => {
         const data = createDataArray(resp);
+        console.log(resp)
         const filteredResults = data.filter(
-          (result) => result.Gkt === '0' || +result.Gkt > 0 // Only need one of the scores to be true
+          (result) => result.GKT === '0' || +result.GKT > 0 // Only need one of the scores to be true
         );
         if (filteredResults.length > 0) setScores(filteredResults);
         const sortedByDateScores = sortByDate(filteredResults);
