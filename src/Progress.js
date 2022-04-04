@@ -48,7 +48,7 @@ const Progress = ({ kingsScore, gktScore, target }) => {
           </div>
 
           <progress
-            className="progress progress-secondary h-4 w-100 self-center"
+            className="progress progress-accent h-4 w-100 self-center"
             value={hasStarted ? calcProgress(gktScore) : '10'}
             max="100"
             style={{ marginBottom: 0 }}
