@@ -15,6 +15,16 @@ export const Events = [
     location: 'Kennington Park',
   },
   {
+    name: 'Swimming and Water Polo',
+    time: '1PM',
+    location: 'Whitgift School',
+  },
+  {
+    name: 'Badminton',
+    time: '1PM',
+    location: 'Brixton Recreation Centre',
+  },
+  {
     name: 'Fencing',
     time: '2PM',
     location: 'Downside Fisher Youth Centre',
@@ -41,6 +51,11 @@ export const Events = [
   },
   {
     name: 'Women\'s Football',
+    time: '4PM',
+    location: 'Football Pitch',
+  },
+  {
+    name: 'Netball',
     time: '4PM',
     location: 'Netball Courts',
   },

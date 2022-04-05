@@ -12,36 +12,13 @@ const Progress = ({ kingsScore, gktScore, target }) => {
   return (
     <div className="px-4 max-w-6xl m-auto my-8 ">
       <ScrollIntoView>
-        <div className="w-100 mb-4 flex content-center h-24">
-          <div className="shadow stats w-40 mr-2">
-            <div className="stat overflow-hidden">
-              <div className="stat-title text-center text-kings font-bold">
-                Kings
-              </div>
-              <div className="stat-value text-center text-kings ">
-                {hasStarted ? kingsScore : '0'}
-              </div>
-            </div>
-          </div>
-          <progress
-            className="progress progress-warning h-4 w-100 self-center"
-            value={hasStarted ? calcProgress(kingsScore) : '10'}
-            max="100"
-            style={{ marginBottom: 0 }}
-          />
-          <div className="self-center text-3xl">
-            <Trophy colour="#e1251d" />
-          </div>
-        </div>
-      </ScrollIntoView>
-      <ScrollIntoView>
-        <div className="w-100 mb-4 flex content-center h-24">
+        <div className="w-100 mb-4 flex content-center h-25">
           <div className="shadow stats w-40 md:w-40 mr-2">
             <div className="stat">
-              <div className="stat-title text-gkt font-bold text-center">
+              <div className="stat-title text-gkt font-bold text-center overflow-hidden">
                 GKT
               </div>
-              <div className="stat-value text-center text-gkt">
+              <div className="stat-value text-center text-gkt overflow-hidden">
                 {hasStarted ? gktScore : '0'}
               </div>
             </div>
@@ -54,7 +31,30 @@ const Progress = ({ kingsScore, gktScore, target }) => {
             style={{ marginBottom: 0 }}
           />
           <div className="self-center text-3xl">
-            <Trophy colour="#f8bc14" />
+            <Trophy colour="#f4ba10" />
+          </div>
+        </div>
+      </ScrollIntoView>
+      <ScrollIntoView>
+        <div className="w-100 mb-4 flex content-center h-25">
+          <div className="shadow stats w-40 mr-2">
+            <div className="stat overflow-hidden">
+              <div className="stat-title text-center text-kings font-bold overflow-hidden">
+                KINGS
+              </div>
+              <div className="stat-value text-center text-kings overflow-hidden">
+                {hasStarted ? kingsScore : '0'}
+              </div>
+            </div>
+          </div>
+          <progress
+            className="progress progress-warning h-4 w-100 self-center"
+            value={hasStarted ? calcProgress(kingsScore) : '10'}
+            max="100"
+            style={{ marginBottom: 0 }}
+          />
+          <div className="self-center text-3xl">
+            <Trophy colour="#e22319" />
           </div>
         </div>
       </ScrollIntoView>
